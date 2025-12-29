@@ -1,0 +1,5 @@
+Name: Mohit Rao
+Dataset link:https://www.kaggle.com/datasets/samikshadalvi/pcos-diagnosis-dataset
+
+Source: Kaggle
+Description: Public PCOS dataset containing PCOS diagnosis, hormonal, menstrual, and clinical features useful for AI-based severity prediction.
