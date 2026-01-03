@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import Link from "next/link";
@@ -16,6 +17,7 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
 
   const { login, isLoading: authLoading } = useAuth();
+  const router = useRouter()
 
   useEffect(() => {
     setIsMounted(true);
@@ -31,7 +33,7 @@ export default function LoginPage() {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     login("dummy-jwt-token");
-    setIsLoading(false);
+    router.push("/onboarding");
   };
 
   if (!isMounted || authLoading) {
@@ -147,12 +149,14 @@ export default function LoginPage() {
               </div>
 
               {/* Login Button */}
+      
               <Button
                 onClick={handleLogin}
                 disabled={!isMounted || isLoading}
                 className="w-full transform hover:-translate-y-0.5"
                 size="lg"
               >
+              
                 {isLoading ? (
                   <div className="flex items-center space-x-2">
                     <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
@@ -162,6 +166,7 @@ export default function LoginPage() {
                   "Sign In"
                 )}
               </Button>
+              
 
               {/* Divider */}
               <div className="relative my-8">

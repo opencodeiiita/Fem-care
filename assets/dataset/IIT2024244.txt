@@ -1,0 +1,2 @@
+Name : Khushi Shorey
+Datset Link : https://www.kaggle.com/datasets/prasoonkottarathil/polycystic-ovary-syndrome-pcos
