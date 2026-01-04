@@ -5,8 +5,6 @@ FEM-CARE is an artificial intelligence–powered women’s health assistance pla
 FEM-CARE AI focuses on accessibility, privacy, and user comfort, offering actionable wellness guidance rather than clinical diagnosis.
 
 ---
-<img width="1500" height="700" alt="image" src="https://github.com/user-attachments/assets/08942663-f397-4c3b-8adb-6b26229f4b16" />
-
 
 ## Problem Statement
 

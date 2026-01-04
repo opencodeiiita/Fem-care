@@ -3,12 +3,12 @@ import mongoose, { Schema, Document } from "mongoose";
 export interface IPredictionResult extends Document {
   userId: mongoose.Types.ObjectId;
   prediction: string;
-  confidence: number;
-  modelVersion?: string;
+  confidenceScore: number;
+  modelVersion: string;
   createdAt: Date;
 }
 
-const PredictionResultSchema = new Schema<IPredictionResult>(
+const PredictionResultSchema = new Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,
@@ -20,7 +20,7 @@ const PredictionResultSchema = new Schema<IPredictionResult>(
       type: String,
       required: true,
     },
-    confidence: {
+    confidenceScore: {
       type: Number,
       required: true,
       min: 0,
@@ -28,6 +28,7 @@ const PredictionResultSchema = new Schema<IPredictionResult>(
     },
     modelVersion: {
       type: String,
+      required: true,
     },
   },
   { timestamps: true }

@@ -3,12 +3,12 @@ import mongoose, { Schema, Document } from "mongoose";
 export interface ISymptomEntry extends Document {
   userId: mongoose.Types.ObjectId;
   symptoms: string[];
-  severity?: number;
+  severity: number;
   notes?: string;
   createdAt: Date;
 }
 
-const SymptomEntrySchema = new Schema<ISymptomEntry>(
+const SymptomEntrySchema = new Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,
@@ -22,8 +22,9 @@ const SymptomEntrySchema = new Schema<ISymptomEntry>(
     },
     severity: {
       type: Number,
+      required: true,
       min: 1,
-      max: 5,
+      max: 10,
     },
     notes: {
       type: String,
@@ -32,7 +33,6 @@ const SymptomEntrySchema = new Schema<ISymptomEntry>(
   { timestamps: true }
 );
 
-// Index for user history sorted by time
 SymptomEntrySchema.index({ userId: 1, createdAt: -1 });
 
 export default mongoose.model<ISymptomEntry>(
